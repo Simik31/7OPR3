@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+* {
+    border: none;
+    padding: 0;
+    color: black;
+    font-family: 'Fira Code', serif;
+    text-align: center;
+}
+
+#wrapper {
+    position: absolute;
+    min-width: 1024px;
+    width: 1024px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+#register_form {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-areas:
+        "title title title title"
+        "name name_input surname surname_input"
+        "student_no student_no_input student_no_empty student_no_empty"
+        "email email_input phone_no phone_no_input"
+        "password password_input password_confirm password_confirm_input"
+        "sex sex_select sex_empty sex_empty"
+        "birth_date birth_date_selects hobby hobby_radio"
+        "submit submit submit submit";
+}
+
+label {
+    text-align: right;
+}
+
+input {
+    background-color: #eaeaea;
+    border-radius: 6px;
+    border: 1px solid #909090;
+}
+
+input, option {
+    text-align: left;
+}
+
+#title {
+    grid-area: title;
+}
+
+#name_label {
+    grid-area: name;
+}
+
+#name_input {
+    grid-area: name_input;
+}
+
+#surname_label {
+    grid-area: surname;
+}
+
+#surname_input {
+    grid-area: surname_input;
+}
+
+#student_no_label {
+    grid-area: student_no;
+}
+
+#student_no_input {
+    grid-area: student_no_input;
+}
+
+#email_label {
+    grid-area: email;
+}
+
+#email_input {
+    grid-area: email_input;
+}
+
+#phone_no_label {
+    grid-area: phone_no;
+}
+
+#phone_no_input {
+    grid-area: phone_no_input;
+}
+
+#password_label {
+    grid-area: password;
+}
+#password_input {
+    grid-area: password_input;
+}
+#password_confirm_label {
+    grid-area: password_confirm;
+}
+#password_confirm_input {
+    grid-area: password_confirm_input
+}
+
+#sex_label {
+    grid-area: sex;
+}
+
+#sex_select {
+    grid-area: sex_select;
+}
+
+#birth_date_label {
+    grid-area: birth_date;
+}
+
+
+#birth_date_selects {
+    grid-area: birth_date_selects;
+}
+
+#hobby_label {
+    grid-area: hobby;
+}
+
+#hobby_radio {
+    grid-area: hobby_radio;
+}
+
+#submit {
+    grid-area: submit;
+    padding: 5px 0 5px 0;
+    border-radius: 10px;
+}
+
+.error {
+    border: 2px solid darkred;
+    color: darkred;
+    background-color: #ff00005a;
+    padding: 5px 0 5px 0;
+}

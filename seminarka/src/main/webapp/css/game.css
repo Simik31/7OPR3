@@ -1,0 +1,151 @@
+#on_move {
+  font-size: calc(var(--font-size-ui) * 0.7);
+  top: calc(var(--ui-spacing) * 0.9);
+  width: 100%;
+  text-align: center;
+}
+
+#on_move span {
+  margin-left: var(--space-size);
+}
+
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background-color: var(--cell-color);
+  border-radius: var(--space-size);
+  font-size: var(--font-size-cell);
+  text-align: center;
+
+  transition-timing-function: var(--cell-transition-function);
+  transition-duration: var(--cell-transition-duration);
+  transition-property: transform, width, height, background-color;
+}
+
+.playable:hover {
+  background-color: var(--cell-color-hover);
+  transform: translate(
+    calc(var(--space-void) * -1),
+    calc(var(--space-void) * -1)
+  );
+  width: calc(var(--cell-size) + var(--space-size));
+  height: calc(var(--cell-size) + var(--space-size));
+}
+
+.spacer {
+  border: calc(var(--space-size) / 2) solid var(--space-color);
+  border-radius: calc(var(--space-size) / 2);
+}
+
+.sh {
+  top: calc(var(--space-size) / -2 + var(--space-void) / -2);
+  height: calc(100% + var(--space-void));
+  width: 0;
+}
+
+#sh1 {
+  left: calc(var(--cell-size) + var(--space-void));
+}
+
+#sh2 {
+  left: calc(var(--cell-size) * 2 + var(--space-size) + var(--space-void) * 3);
+}
+
+.sv {
+  left: calc(var(--space-size) / -2 + var(--space-void) / -2);
+  height: 0;
+  width: calc(100% + var(--space-void));
+}
+
+#sv1 {
+  top: calc(var(--cell-size) + var(--space-void));
+}
+
+#sv2 {
+  top: calc(var(--cell-size) * 2 + var(--space-size) + var(--space-void) * 3);
+}
+
+.r0 {
+  top: 0;
+}
+
+.r1 {
+  top: calc(var(--cell-size) + var(--space-size) + var(--space-void) * 2);
+}
+
+.r2 {
+  top: calc(
+    var(--cell-size) * 2 + var(--space-size) * 2 + var(--space-void) * 4
+  );
+}
+
+.c0 {
+  left: 0;
+}
+
+.c1 {
+  left: calc(var(--cell-size) + var(--space-size) + var(--space-void) * 2);
+}
+
+.c2 {
+  left: calc(
+    var(--cell-size) * 2 + var(--space-size) * 2 + var(--space-void) * 4
+  );
+}
+
+a {
+  display: inline-block;
+  bottom: calc(var(--ui-spacing) * 0.75);
+  font-size: calc(var(--font-size-ui) / 2);
+  width: 50%;
+  text-align: center;
+  color: var(--ui-font-color) !important;
+}
+
+#history {
+  left: 0;
+}
+
+#stats {
+  right: 0;
+}
+
+#game_id {
+  bottom: var(--space-size);
+  left: calc(2 * var(--space-size));
+  font-size: calc(var(--font-size-ui) * 0.4);
+}
+
+#wi {
+  top: calc(var(--cell-size) * 1.5 + var(--space-size) + var(--space-void));
+}
+
+#wo {
+  top: calc(var(--cell-size) * 1.5 + var(--space-size));
+  border: var(--background-color) solid calc(var(--space-size) / 2 + var(--space-void));
+  border-radius: calc(var(--space-size) / 2 + var(--space-void));
+}
+
+#wi.vh {
+  left: calc(var(--cell-size) / 3);
+  right: calc(var(--cell-size) / 3);
+}
+
+#wo.vh {
+  left: calc(var(--cell-size) / 3 - var(--space-void));
+  right: calc(var(--cell-size) / 3 - var(--space-void));
+}
+
+#wi.d {
+  left: 0;
+  right: 0;
+}
+
+#wo.d {
+  left: calc(-1 * var(--space-void));
+  right: calc(-1 * var(--space-void));
+}
+
+.ajs-message {
+  font-size: calc(var(--font-size-ui) / 2);
+}
