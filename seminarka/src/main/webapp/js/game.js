@@ -65,8 +65,8 @@ function test_dias_for_win() {
 function uploadResult(result) {
     let id = document.getElementById("gameId").innerText;
 
-    let resultIds = localStorage.getItem("resultIds");
-    localStorage.setItem("resultIds", (resultIds === null) ? id : resultIds + "," + id);
+    let ids = Cookies.get("resultIds");
+    Cookies.set("resultIds", ids === undefined ? id : ids + "," + id);
 
     $.ajax({
         type: "POST",

@@ -12,16 +12,7 @@
 
 <div class="content">
     <a id="global" href="./history/global">Global history</a>
-    <form id="localForm" action="./history/local" method="post">
-        <input type="hidden" name="resultIds" id="resultIds" value="">
-        <a id="local" href="#" onclick="localHistory()">Local history</a>
-    </form>
+    <a id="local" href="./history/local">Local history</a>
 </div>
-<script>
-    function localHistory() {
-        document.getElementById("resultIds").value = localStorage.getItem("resultIds");
-        document.getElementById("localForm").submit();
-    }
-</script>
 </body>
 </html>

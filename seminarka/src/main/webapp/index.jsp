@@ -7,6 +7,7 @@
     <title>Tic-Tac-Toe</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
     <script src="./AlertifyJS/alertify.min.js"></script>
     <link rel="stylesheet" href="./AlertifyJS/alertify.min.css">
     <link rel="stylesheet" href="./AlertifyJS/default.min.css">
