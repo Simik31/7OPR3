@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8" />
     <title>Tic-Tac-Toe :: History</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="stylesheet" href="./css/history.css" />
 </head>

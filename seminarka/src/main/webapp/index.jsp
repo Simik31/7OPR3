@@ -2,22 +2,21 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title>Tic-Tac-Toe</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
-    <script src="./AlertifyJS/alertify.min.js"></script>
-    <link rel="stylesheet" href="./AlertifyJS/alertify.min.css">
-    <link rel="stylesheet" href="./AlertifyJS/default.min.css">
-    <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/game.css" />
-</head>
-<body>
-<div class="content">
-    <h1 id="title">Tic-Tac-Toe</h1>
-    <h2 id="on_move">On move</h2>
+    <head>
+        <meta charset="utf-8" />
+        <title>Tic-Tac-Toe</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+        <script src="./AlertifyJS/alertify.min.js"></script>
+        <link rel="stylesheet" href="./AlertifyJS/alertify.min.css">
+        <link rel="stylesheet" href="./AlertifyJS/default.min.css">
+        <link rel="stylesheet" href="./css/main.css" />
+        <link rel="stylesheet" href="./css/game.css" />
+    </head>
+    <body>
+        <div class="content">
+            <h1 id="title">Tic-Tac-Toe</h1>
+            <h2 id="on_move">On move</h2>
 
     <%
         for (int r = 0; r < 3; r++)

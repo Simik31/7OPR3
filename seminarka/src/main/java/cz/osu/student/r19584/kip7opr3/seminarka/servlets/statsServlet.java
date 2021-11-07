@@ -24,7 +24,6 @@ public class statsServlet extends HttpServlet {
                 "<head>\n" +
                 "    <meta charset=\"utf-8\" />\n" +
                 "    <title>Tic-Tac-Toe :: Stats</title>\n" +
-                "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n" +
                 "    <link rel=\"stylesheet\" href=\"./css/main.css\" />\n" +
                 "    <link rel=\"stylesheet\" href=\"./css/stats.css\" />\n" +
                 "</head>\n" +
