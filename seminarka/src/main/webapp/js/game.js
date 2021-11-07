@@ -83,7 +83,7 @@ function uploadResult(result) {
 }
 
 function win(win_rows, win_cols, win_dias) {
-    elements.cells.forEach((cell) => cell.classList.remove('playable'));
+    elements.cells.forEach(cell => cell.classList.remove('playable'));
 
     let top;
     let deg;
@@ -123,7 +123,7 @@ function win(win_rows, win_cols, win_dias) {
 }
 
 function draw() {
-    elements.cells.forEach((cell) => cell.classList.remove('playable'));
+    elements.cells.forEach(cell => cell.classList.remove('playable'));
     uploadResult("draw");
     elements.on_move.innerText = 'Draw!';
 }
@@ -134,7 +134,7 @@ function test_for_win() {
     let win_dias = test_dias_for_win();
 
     if (win_rows === false && win_cols === false && win_dias === false) {
-        if (elements.cells.some((cell) => cell.innerText === ''))
+        if (elements.cells.some(cell => cell.innerText === ''))
             return 0;
         draw();
     } else
