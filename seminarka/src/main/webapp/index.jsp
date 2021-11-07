@@ -18,24 +18,24 @@
             <h1 id="title">Tic-Tac-Toe</h1>
             <h2 id="on_move">On move</h2>
 
-    <%
-        for (int r = 0; r < 3; r++)
-            for (int c = 0; c < 3; c++)
-                out.print("<span id=\"cell_" + (r * 3 + c) + "\" class=\"r" + r + " c" + c + " cell playable\"></span>\n");
+            <%
+                for (int r = 0; r < 3; r++)
+                    for (int c = 0; c < 3; c++)
+                        out.print("<span id=\"cell_" + (r * 3 + c) + "\" class=\"r" + r + " c" + c + " cell playable\"></span>\n");
 
-        for (char c : new char[]{'h', 'v'})
-            for (int i = 1; i < 3; i++)
-                out.print("<span id=\"s" + c + "" + i + "\" class=\"s" + c + " spacer\"></span>\n");
-    %>
+                for (char c : new char[]{'h', 'v'})
+                    for (int i = 1; i < 3; i++)
+                        out.print("<span id=\"s" + c + "" + i + "\" class=\"s" + c + " spacer\"></span>\n");
+            %>
 
-    <a id="history" href="./history.jsp">History</a>
-    <a id="stats" href="./stats">Statistics</a>
-</div>
+            <a id="history" href="./history.jsp">History</a>
+            <a id="stats" href="./stats">Statistics</a>
+        </div>
 
-<h3 id="game_id">Game #<span id="gameId"><%
-    out.print(String.format("%x", new Random().nextInt(0x10000000) + 0x10000000)); // 161,061,273 combinations
-%></span></h3>
+        <h3 id="game_id">Game #<span id="gameId"><%
+            out.print(String.format("%x", new Random().nextInt(0x10000000) + 0x10000000)); // 161,061,273 combinations
+        %></span></h3>
 
-<script src="./js/game.js"></script>
-</body>
+        <script type="module" src="./js/game.js"></script>
+    </body>
 </html>

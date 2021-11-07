@@ -31,6 +31,7 @@ public class simulateServlet extends HttpServlet {
         for (char c : new char[]{'h', 'v'})
             for (int i = 1; i < 3; i++)
                 out.print("<span id=\"s" + c + "" + i + "\" class=\"s" + c + " spacer\"></span>\n");
+
         out.print("</div>");
         out.print("<canvas with=150 height=150 />");
         out.print("<script type=\"module\" src=\"./js/simulate.js\"></script>");
