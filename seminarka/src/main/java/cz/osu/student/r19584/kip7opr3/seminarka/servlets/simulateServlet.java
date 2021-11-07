@@ -1,8 +1,5 @@
 package cz.osu.student.r19584.kip7opr3.seminarka.servlets;
 
-import cz.osu.student.r19584.kip7opr3.seminarka.models.Winner;
-import cz.osu.student.r19584.kip7opr3.seminarka.services.ResultService;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
