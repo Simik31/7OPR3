@@ -16,6 +16,8 @@ const css_vars = {
     "color_o": getComputedStyle(document.documentElement).getPropertyValue('--player-o-color').replace(' ', ''),
 }
 
+let steps = Array();
+
 function update_on_move() {
     on_move = (on_move === player_x) ? player_o : player_x;
     elements.on_move.innerHTML = 'On move: <span style="color:' + css_vars[(on_move === player_x) ? 'color_x' : 'color_o'] + '">' + on_move + '</span>';
@@ -73,7 +75,8 @@ function uploadResult(result) {
         url: "./addResult",
         data: {
             id: id,
-            result: result
+            result: result,
+            steps: steps.toString()
         },
         error: function() { alertify.error("Server error"); }
     });
@@ -143,6 +146,8 @@ function cell_click(cell_id) {
 
     if (!cell.classList.contains('playable'))
         return;
+
+    steps.push(cell.id);
 
     cell.classList.remove('playable');
     cell.style['color'] = css_vars[(on_move === player_x) ? 'color_x' : 'color_o'];

@@ -9,6 +9,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @WebServlet(name = "addResultServlet", value = "/addResult")
 public class addResultServlet extends HttpServlet {
@@ -29,7 +30,8 @@ public class addResultServlet extends HttpServlet {
         ResultService.addResult(new Result(
                 Integer.parseInt(request.getParameter("id"), 16),
                 LocalDateTime.now(),
-                winner
+                winner,
+                List.of(request.getParameter("steps").split(","))
         ));
     }
 }
