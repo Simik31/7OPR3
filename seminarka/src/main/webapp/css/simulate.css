@@ -1,0 +1,7 @@
+:root {
+  --cell-size: 40px;
+  --font-size-cell: 40px;
+
+  --space-size: 2px;
+  --space-void: 1px;
+}

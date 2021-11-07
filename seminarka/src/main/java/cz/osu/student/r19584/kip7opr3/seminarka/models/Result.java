@@ -40,7 +40,7 @@ public class Result {
         return String.format("Game #%x | Played: %s | %s",
                 getId(),
                 getTimestamp().format(dtf),
-                (getWinner() == Winner.DRAW) ? "Draw" : "Winner: " + getWinner() + " | Steps: " + getSteps()
+                (getWinner() == Winner.DRAW) ? "Draw" : "Winner: " + getWinner()
         );
     }
 }

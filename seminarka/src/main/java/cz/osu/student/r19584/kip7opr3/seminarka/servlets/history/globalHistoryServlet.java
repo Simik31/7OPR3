@@ -21,7 +21,7 @@ public class globalHistoryServlet extends HttpServlet {
         out.print("<title>Tic-Tac-Toe :: Global history</title>");
 
         for (Result result : results)
-            out.print(result + "<br>");
+            out.print("<p>" + result + "<iframe width=\"150\" height=\"'150\" src=\"../simulate?steps=" + result.getSteps().toString().replace("[", "").replace("]", "").replace(" ", "") + "\"></iframe></p>");
     }
 
     @Override
