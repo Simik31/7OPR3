@@ -33,7 +33,7 @@ public class simulateServlet extends HttpServlet {
                 out.print("<span id=\"s" + c + "" + i + "\" class=\"s" + c + " spacer\"></span>\n");
         out.print("</div>");
         out.print("<canvas with=150 height=150 />");
-        out.print("<script src=\"./js/simulate.js\"></script>");
+        out.print("<script type=\"module\" src=\"./js/simulate.js\"></script>");
     }
 
     @Override
