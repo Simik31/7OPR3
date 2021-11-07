@@ -5,3 +5,8 @@
   --space-size: 2px;
   --space-void: 1px;
 }
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
