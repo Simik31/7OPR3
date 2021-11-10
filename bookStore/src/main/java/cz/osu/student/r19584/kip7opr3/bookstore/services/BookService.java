@@ -23,4 +23,11 @@ public class BookService {
     public List<Book> getBooks() {
         return books;
     }
+
+    public void payBook(Book book) {
+        books.forEach(b -> {
+            if (b.getId() == book.getId())
+                b.setPurchased(true);
+        });
+    }
 }

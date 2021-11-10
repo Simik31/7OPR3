@@ -14,4 +14,8 @@ public class Cart {
     public Map<Book, Integer> getBooks() {
         return new HashMap<>(books);
     }
+
+    public void empty() {
+        books.clear();
+    }
 }

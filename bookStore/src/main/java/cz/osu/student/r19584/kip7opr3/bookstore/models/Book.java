@@ -1,19 +1,21 @@
 package cz.osu.student.r19584.kip7opr3.bookstore.models;
 
 public class Book {
-    Integer id;
-    String title;
-    String author;
-    String downloadUrl;
+    private final int id;
+    private final String title;
+    private final String author;
+    private final String downloadUrl;
+    private boolean purchased;
 
     public Book(Integer id, String title, String author, String downloadUrl) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.downloadUrl = downloadUrl;
+        this.purchased = false;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
@@ -27,6 +29,14 @@ public class Book {
 
     public String getDownloadUrl() {
         return downloadUrl;
+    }
+
+    public boolean isPurchased() {
+        return purchased;
+    }
+
+    public void setPurchased(boolean purchased) {
+        this.purchased = purchased;
     }
 
     @Override

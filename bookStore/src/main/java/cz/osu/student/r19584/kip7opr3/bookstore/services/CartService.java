@@ -15,4 +15,12 @@ public class CartService {
     public Map<Book, Integer> getBooks() {
         return cart.getBooks();
     }
+
+    public boolean isBookInCart(Book book) {
+        return cart.getBooks().containsKey(book);
+    }
+
+    public void emptyCart() {
+        cart.empty();
+    }
 }
