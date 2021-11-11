@@ -15,57 +15,48 @@ public class statsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
 
-        String x_percent = String.format("%.1f", ResultService.getNumberOfWinedGames(Winner.X) * 100.0 / Math.max(1, ResultService.getNumberOfGames()));
-        String o_percent = String.format("%.1f", ResultService.getNumberOfWinedGames(Winner.O) * 100.0 / Math.max(1, ResultService.getNumberOfGames()));
-        String d_percent = String.format("%.1f", ResultService.getNumberOfWinedGames(Winner.DRAW) * 100.0 / Math.max(1, ResultService.getNumberOfGames()));
-
         out.println("<!DOCTYPE html>\n" +
                 "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">\n" +
                 "<head>\n" +
                 "    <meta charset=\"utf-8\" />\n" +
                 "    <title>Tic-Tac-Toe :: Stats</title>\n" +
+                "    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>\n" +
+                "    <script src=\"https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js\"></script>\n" +
+                "    <script src=\"./AlertifyJS/alertify.min.js\"></script>\n" +
+                "    <link rel=\"stylesheet\" href=\"./AlertifyJS/alertify.min.css\">\n" +
+                "    <link rel=\"stylesheet\" href=\"./AlertifyJS/default.min.css\">" +
                 "    <link rel=\"stylesheet\" href=\"./css/main.css\" />\n" +
                 "    <link rel=\"stylesheet\" href=\"./css/stats.css\" />\n" +
                 "</head>\n" +
                 "<body>\n" +
                 "    <div class=\"content\">\n" +
                 "        <h1 id=\"title\">Win rates</h1>\n" +
-                "        <div id=\"stats_theoretical\">\n" +
-                "            <h1 class=\"title\">Theroteical</h1>\n" +
-                "            <span class=\"stats_label win_rate_x\">x</span>\n" +
-                "            <span class=\"stats_label draw_rate\">draw</span>\n" +
-                "            <span class=\"stats_label win_rate_o\">O</span>\n" +
                 "\n" +
-                "            <span class=\"stats_percent win_rate_x\">58.5%</span>\n" +
-                "            <span class=\"stats_percent draw_rate\">12.7%</span>\n" +
-                "            <span class=\"stats_percent win_rate_o\">28.8%</span>\n" +
+                "        <span id=\"scope_theoretical\" class=\"w-33 l-0 r-66 text-center font-size-ui-45 pointer\" onclick=\"update('theoretical')\">Theoretical</span>\n" +
+                "        <span id=\"scope_global\" class=\"w-33  l-33 r-33 text-center font-size-ui-45 pointer\" onclick=\"update('global')\">Global</span>\n" +
+                "        <span id=\"scope_local\" class=\"w-33 l-66 r-0 text-center font-size-ui-45 pointer\" onclick=\"update('local')\">Local</span>\n" +
                 "\n" +
-                "            <div class=\"bar\">\n" +
-                "                <div class=\"bar_x bar_line\">x</div>\n" +
-                "                <div class=\"bar_o bar_line\">O</div>\n" +
-                "            </div>\n" +
+                "        <span class=\"color_x w-100 t-50 y-200 font-size-ui-100 text-left\">x</span>\n" +
+                "        <span class=\"w-100 t-50 y-200 font-size-ui-100 text-center\">draw</span>\n" +
+                "        <span class=\"color_o w-100 t-50 y-200 font-size-ui-100 text-right\">O</span>\n" +
+                "\n" +
+                "        <span id=\"percentage_x\" class=\"color_x w-100 t-50 y-200 font-size-ui-60 text-left\">0.0%</span>\n" +
+                "        <span id=\"percentage_d\" class=\"w-100 t-50 y-200 font-size-ui-60 text-center\">0.0%</span>\n" +
+                "        <span id=\"percentage_o\" class=\"color_o w-100 t-50 y-200 font-size-ui-60 text-right\">0.0%</span>\n" +
+                "\n" +
+                "        <div class=\"bar text-center bar_box font-size-ui-60 t-50 y-50 l-0 r-0 border-radius-100\">\n" +
+                "            <div id=\"bar_x\" class=\"bar over-hidden bg_color_x border-radius-50 l-0\" style=\"width:0\">x</div>\n" +
+                "            <div id=\"bar_o\" class=\"bar over-hidden bg_color_o border-radius-50 r-0\" style=\"width:0\">O</div>\n" +
                 "        </div>\n" +
-                "        <div id=\"stats_real\">\n" +
-                "            <h1 class=\"title\">Real</h1>\n" +
-                "            <span class=\"stats_label win_rate_x\">x</span>\n" +
-                "            <span class=\"stats_label draw_rate\">draw</span>\n" +
-                "            <span class=\"stats_label win_rate_o\">O</span>\n" +
                 "\n" +
-                "            <span class=\"stats_percent win_rate_x\">" + x_percent + "%</span>\n" +
-                "            <span class=\"stats_percent draw_rate\">" + d_percent + "%</span>\n" +
-                "            <span class=\"stats_percent win_rate_o\">" + o_percent + "%</span>\n" +
-                "\n" +
-                "            <div class=\"bar\">\n" +
-                "                <div class=\"bar_x bar_line\" style=\"width: calc(" + x_percent + "% - " + ((Double.parseDouble(x_percent) < 98.5) ? "" : "2 * ") + "var(--bar-border-width));\">x</div>\n" +
-                "                <div class=\"bar_o bar_line\" style=\"width: calc(" + o_percent + "% - " + ((Double.parseDouble(o_percent) < 98.5) ? "" : "2 * ") + "var(--bar-border-width));\">O</div>\n" +
-                "            </div>\n" +
-                "        </div>\n" +
-                "        <div id=\"stats_list\">\n" +
-                "            <span>X wins: " + ResultService.getNumberOfWinedGames(Winner.X) + " - " + x_percent + "%</span><br />\n" +
-                "            <span>O wins: " + ResultService.getNumberOfWinedGames(Winner.O) + " - " + o_percent + "%</span><br />\n" +
-                "            <span>Draws: " + ResultService.getNumberOfWinedGames(Winner.DRAW) + " - " + d_percent + "%</span>\n" +
+                "       <div id=\"stats_list\">\n" +
+                "            <span id=\"count_x\" class=\"t-50 font-size-ui-60\">X wins: </span>\n" +
+                "            <span id=\"count_d\" class=\"t-50 font-size-ui-60\">Draws: </span>\n" +
+                "            <span id=\"count_o\" class=\"t-50 font-size-ui-60\">O wins: </span>\n" +
                 "        </div>\n" +
                 "    </div>\n" +
+                "\n" +
+                "<script src=\"./js/stats.js\"></script>\n" +
                 "</body>\n" +
                 "</html>");
     }
