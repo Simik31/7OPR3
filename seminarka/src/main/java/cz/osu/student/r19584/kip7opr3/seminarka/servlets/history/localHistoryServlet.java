@@ -1,5 +1,6 @@
 package cz.osu.student.r19584.kip7opr3.seminarka.servlets.history;
 
+import cz.osu.student.r19584.kip7opr3.seminarka.Utils;
 import cz.osu.student.r19584.kip7opr3.seminarka.models.Result;
 import cz.osu.student.r19584.kip7opr3.seminarka.services.ResultService;
 
@@ -8,31 +9,13 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.net.URLDecoder;
-import java.nio.charset.Charset;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @WebServlet(name = "localHistoryServlet", value = "/history/local")
 public class localHistoryServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Cookie> cookies = List.of(request.getCookies());
-        Optional<Cookie> id_cookie = cookies.stream().filter(cookie -> cookie.getName().equals("resultIds")).findFirst();
-
-        String id_string;
-        List<Result> results;
-
-        if (id_cookie.isPresent() && !(id_string = id_cookie.get().getValue()).equals("")) {
-            id_string = URLDecoder.decode(id_string, Charset.defaultCharset());
-            List<String> ids_str = List.of(id_string.contains(",") ? id_string.split(",") : new String[]{id_string});
-            List<Integer> ids = new ArrayList<>();
-            for (String id : ids_str)
-                ids.add(Integer.parseInt(id, 16));
-
-            results = ResultService.getResultsWithIds(ids);
-        } else results = new ArrayList<>();
+        List<Result> results = ResultService.getResultsWithIds(Utils.getLocalGames(request));
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
