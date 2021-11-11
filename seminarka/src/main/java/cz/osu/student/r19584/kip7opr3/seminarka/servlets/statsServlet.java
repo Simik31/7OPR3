@@ -19,7 +19,7 @@ public class statsServlet extends HttpServlet {
                 "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">\n" +
                 "<head>\n" +
                 "    <meta charset=\"utf-8\" />\n" +
-                "    <title>Tic-Tac-Toe :: Stats</title>\n" +
+                "    <title>Tic-Tac-Toe :: Statistics</title>\n" +
                 "    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>\n" +
                 "    <script src=\"https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js\"></script>\n" +
                 "    <script src=\"./AlertifyJS/alertify.min.js\"></script>\n" +
@@ -30,7 +30,7 @@ public class statsServlet extends HttpServlet {
                 "</head>\n" +
                 "<body>\n" +
                 "    <div class=\"content\">\n" +
-                "        <h1 id=\"title\">Win rates</h1>\n" +
+                "        <h1 id=\"title\">Statistics</h1>\n" +
                 "\n" +
                 "        <span id=\"scope_theoretical\" class=\"w-33 l-0 r-66 text-center font-size-ui-45 pointer\" onclick=\"update('theoretical')\">Theoretical</span>\n" +
                 "        <span id=\"scope_global\" class=\"w-33  l-33 r-33 text-center font-size-ui-45 pointer\" onclick=\"update('global')\">Global</span>\n" +
