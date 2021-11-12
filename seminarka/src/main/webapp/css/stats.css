@@ -1,30 +1,5 @@
-.w-33 { width: 33.3% }
-.w-100 { width: 100% }
-.t-50 { top: 50% }
-.y-200 { transform: translateY(-200%) }
-.y-50 { transform: translateY(-50%) }
-.l-0 { left: 0 }
-.l-33 { left: 33.3% }
-.l-66 { left: 66.6% }
-.r-0 { right: 0 }
-.r-33 { right: 33.3% }
-.r-66 { right: 66.6% }
-.over-hidden { overflow: hidden }
-.text-left { text-align: left }
-.text-center { text-align: center }
-.text-right { text-align: right }
-.font-size-ui-100 { font-size: var(--font-size-ui) }
-.font-size-ui-60 { font-size: calc(var(--font-size-ui) * 0.6) }
-.font-size-ui-45 { font-size: calc(var(--font-size-ui) * 0.45) }
-.bar { height: var(--bar-height) }
-.border-radius-100 { border-radius: var(--bar-border-width) }
-.border-radius-50 { border-radius: calc(var(--bar-border-width) / 2) }
-.bar_box { border: var(--bar-border-width) solid var(--bar-border-color) }
-.bg_color_x { background-color: var(--player-x-color) }
-.color_x { color: var(--player-x-color) }
-.bg_color_o { background-color: var(--player-o-color) }
-.color_o { color: var(--player-o-color) }
-#count_x { transform: translateY(100%) }
-#count_d { transform: translateY(200%) }
-#count_o { transform: translateY(300%) }
-.pointer { cursor: pointer }
+.bar {
+    transition-timing-function: var(--cell-transition-function);
+    transition-duration: var(--bar-transition-duration);
+    transition-property: transform, width;
+}

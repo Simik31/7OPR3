@@ -73,6 +73,7 @@ export function draw_win_lines(win_rows, win_cols, win_dias, winner) {
     lineOuter.id = "wo";
     lineOuter.classList.add((win_dias === false) ? "vh" : "d");
     lineOuter.classList.add("spacer");
+    lineOuter.classList.add("position-fixed");
     lineOuter.classList.add("outer");
     lineOuter.style.transform = "rotate(" + deg + "deg) translateY(calc(" + top + " * (var(--cell-size) + var(--space-size) + 2 * var(--space-void))))";
     document.getElementsByClassName("content")[0].appendChild(lineOuter);
@@ -81,6 +82,7 @@ export function draw_win_lines(win_rows, win_cols, win_dias, winner) {
     lineInner.id = "wi";
     lineInner.classList.add((win_dias === false) ? "vh" : "d");
     lineInner.classList.add("spacer");
+    lineInner.classList.add("position-fixed");
     lineInner.style.borderColor = (winner === player_x) ? css_vars.color_x : css_vars.color_o;
     lineInner.style.transform = "rotate(" + deg + "deg) translateY(calc(" + top + " * (var(--cell-size) + var(--space-size) + 2 * var(--space-void))))";
     document.getElementsByClassName("content")[0].appendChild(lineInner);
