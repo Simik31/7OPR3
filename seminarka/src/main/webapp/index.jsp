@@ -11,28 +11,29 @@
         <link rel="stylesheet" href="./AlertifyJS/alertify.min.css">
         <link rel="stylesheet" href="./AlertifyJS/default.min.css">
         <link rel="stylesheet" href="./css/main.css" />
+        <link rel="stylesheet" href="./css/classes.css" />
         <link rel="stylesheet" href="./css/game.css" />
     </head>
     <body>
-        <div class="content">
-            <h1 id="title">Tic-Tac-Toe</h1>
-            <h2 id="on_move">On move</h2>
+        <div class="content position-fixed">
+            <h1 id="title" class="position-fixed">Tic-Tac-Toe</h1>
+            <h2 id="on_move" class="position-fixed">On move</h2>
 
             <%
                 for (int r = 0; r < 3; r++)
                     for (int c = 0; c < 3; c++)
-                        out.print("<span id=\"cell_" + (r * 3 + c) + "\" class=\"r" + r + " c" + c + " cell playable\"></span>\n");
+                        out.print("<span id=\"cell_" + (r * 3 + c) + "\" class=\"r" + r + " c" + c + " cell playable position-fixed\"></span>\n");
 
                 for (char c : new char[]{'h', 'v'})
                     for (int i = 1; i < 3; i++)
-                        out.print("<span id=\"s" + c + "" + i + "\" class=\"s" + c + " spacer\"></span>\n");
+                        out.print("<span id=\"s" + c + "" + i + "\" class=\"s" + c + " spacer position-fixed\"></span>\n");
             %>
 
-            <a id="history" href="./history.jsp">History</a>
-            <a id="stats" href="./stats">Statistics</a>
+            <a id="history" class="position-fixed" href="./history">History</a>
+            <a id="stats" class="position-fixed" href="./stats">Statistics</a>
         </div>
 
-        <h3 id="game_id">Game #<span id="gameId"><%
+        <h3 id="game_id" class="position-fixed">Game #<span id="gameId"><%
             out.print(String.format("%x", new Random().nextInt(0x10000000) + 0x10000000)); // 161,061,273 combinations
         %></span></h3>
 

@@ -16,18 +16,19 @@ public class simulateServlet extends HttpServlet {
         response.setContentType("text/html");
 
         out.println("    <link rel=\"stylesheet\" href=\"./css/main.css\" />\n" +
+                "    <link rel=\"stylesheet\" href=\"./css/classes.css\" />\n" +
                 "    <link rel=\"stylesheet\" href=\"./css/simulate.css\" />\n" +
                 "    <link rel=\"stylesheet\" href=\"./css/game.css\" />");
-        out.print("<div class=\"content\">");
+        out.print("<div class=\"content position-fixed\">");
         out.print("<input type=\"hidden\" id=\"steps\" value=\"" + request.getParameter("steps") + "\">");
 
         for (int r = 0; r < 3; r++)
             for (int c = 0; c < 3; c++)
-                out.print("<span id=\"cell_" + (r * 3 + c) + "\" class=\"r" + r + " c" + c + " cell\"></span>\n");
+                out.print("<span id=\"cell_" + (r * 3 + c) + "\" class=\"r" + r + " c" + c + " cell position-fixed\"></span>\n");
 
         for (char c : new char[]{'h', 'v'})
             for (int i = 1; i < 3; i++)
-                out.print("<span id=\"s" + c + "" + i + "\" class=\"s" + c + " spacer\"></span>\n");
+                out.print("<span id=\"s" + c + "" + i + "\" class=\"s" + c + " spacer position-fixed\"></span>\n");
 
         out.print("</div>");
         out.print("<canvas></canvas>");
