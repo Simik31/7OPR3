@@ -6,6 +6,9 @@ export const css_vars = {
     "color_o": getComputedStyle(document.documentElement).getPropertyValue('--player-o-color').replace(' ', ''),
 }
 
+if (css_vars.cell_center === 0)
+    window.location.reload();
+
 export const cells = Array.from(document.getElementsByClassName('cell'));
 
 export const player_x = 'x';
