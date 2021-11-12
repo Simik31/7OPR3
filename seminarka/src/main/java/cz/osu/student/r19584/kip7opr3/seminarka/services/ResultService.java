@@ -1,7 +1,7 @@
 package cz.osu.student.r19584.kip7opr3.seminarka.services;
 
+import cz.osu.student.r19584.kip7opr3.seminarka.Winner;
 import cz.osu.student.r19584.kip7opr3.seminarka.models.Result;
-import cz.osu.student.r19584.kip7opr3.seminarka.models.Winner;
 
 import java.util.ArrayList;
 import java.util.List;

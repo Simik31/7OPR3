@@ -1,9 +1,9 @@
 package cz.osu.student.r19584.kip7opr3.seminarka.models;
 
+import cz.osu.student.r19584.kip7opr3.seminarka.Winner;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Result {
     private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss.SSS");

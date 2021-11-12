@@ -1,8 +1,8 @@
 package cz.osu.student.r19584.kip7opr3.seminarka.servlets;
 
 import cz.osu.student.r19584.kip7opr3.seminarka.Utils;
+import cz.osu.student.r19584.kip7opr3.seminarka.Winner;
 import cz.osu.student.r19584.kip7opr3.seminarka.models.Result;
-import cz.osu.student.r19584.kip7opr3.seminarka.models.Winner;
 import cz.osu.student.r19584.kip7opr3.seminarka.services.ResultService;
 
 import javax.servlet.*;

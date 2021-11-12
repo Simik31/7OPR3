@@ -1,7 +1,7 @@
 package cz.osu.student.r19584.kip7opr3.seminarka.servlets;
 
+import cz.osu.student.r19584.kip7opr3.seminarka.Winner;
 import cz.osu.student.r19584.kip7opr3.seminarka.models.Result;
-import cz.osu.student.r19584.kip7opr3.seminarka.models.Winner;
 import cz.osu.student.r19584.kip7opr3.seminarka.services.ResultService;
 
 import javax.servlet.*;
@@ -9,7 +9,6 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @WebServlet(name = "addResultServlet", value = "/addResult")
 public class addResultServlet extends HttpServlet {
