@@ -20,18 +20,16 @@ public class addResultServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Winner winner = switch (request.getParameter("result")) {
-            case "x" -> Winner.X;
-            case "O" -> Winner.O;
-            case "draw" -> Winner.DRAW;
-            default -> throw new ServletException("Invalid winner");
-        };
-
         ResultService.addResult(new Result(
-                Integer.parseInt(request.getParameter("id"), 16),
-                LocalDateTime.now(),
-                winner,
-                List.of(request.getParameter("steps").split(","))
+            Integer.parseInt(request.getParameter("id"), 16),
+            LocalDateTime.now(),
+            switch (request.getParameter("result")) {
+                case "x" -> Winner.X;
+                case "O" -> Winner.O;
+                case "draw" -> Winner.DRAW;
+                default -> throw new ServletException("Invalid winner");
+            },
+            request.getParameter("steps")
         ));
     }
 }

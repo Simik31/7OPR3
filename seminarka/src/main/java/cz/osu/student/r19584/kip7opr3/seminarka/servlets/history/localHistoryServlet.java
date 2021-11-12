@@ -23,7 +23,7 @@ public class localHistoryServlet extends HttpServlet {
         out.print("<script src=\"https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js\"></script>");
 
         for (Result result : results)
-            out.print("<p>" + result + "<iframe width=\"150\" height=\"150\" src=\"../simulate?steps=" + result.getSteps().toString().replace("[", "").replace("]", "").replace(" ", "") + "\"></iframe></p>");
+            out.print("<p>" + result + "<iframe width=\"150\" height=\"150\" src=\"../simulate?steps=" + result.getSteps() + "\"></iframe></p>");
 
         if (results.size() > 0) {
             out.print("<form id=\"clearForm\" action=\"../\" method=\"post\">" +

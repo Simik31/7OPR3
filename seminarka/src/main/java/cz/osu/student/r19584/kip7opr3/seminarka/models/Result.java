@@ -11,9 +11,9 @@ public class Result {
     private final int id;
     private final LocalDateTime timestamp;
     private final Winner winner;
-    private final List<String> steps;
+    private final String steps;
 
-    public Result(int id, LocalDateTime timestamp, Winner winner, List<String> steps) {
+    public Result(int id, LocalDateTime timestamp, Winner winner, String steps) {
         this.id = id;
         this.timestamp = timestamp;
         this.winner = winner;
@@ -32,8 +32,8 @@ public class Result {
         return winner;
     }
 
-    public List<String> getSteps() {
-        return new ArrayList<>(steps);
+    public String getSteps() {
+        return steps;
     }
 
     public String toString() {
