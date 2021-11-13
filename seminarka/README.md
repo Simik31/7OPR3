@@ -1,9 +1,8 @@
 # TIC-TAC-TOE
 
-JSP, Servlet & JPA
-
 ## User stories
 - [x] As a player, I want to be able to play hot-seat tic-tac-toes.
+- [x] As a player, I want the game to be classic 3x3 board.
 - [x] As the first player, I want to play as X.
 - [x] As the second player, I want to play as O.
 - [x] As a player, I want to be able to win the game by placing 3 Xs or Os in a row.
