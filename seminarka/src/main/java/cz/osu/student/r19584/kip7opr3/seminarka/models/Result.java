@@ -1,46 +1,67 @@
 package cz.osu.student.r19584.kip7opr3.seminarka.models;
 
-import cz.osu.student.r19584.kip7opr3.seminarka.Winner;
+import javax.persistence.*;
+import java.sql.Timestamp;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
+@Table(name = "results", indexes = {
+        @Index(name = "resultID", columnList = "resultID", unique = true)
+})
+@Entity
 public class Result {
-    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss.SSS");
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID", nullable = false)
+    private Integer id;
 
-    private final int id;
-    private final LocalDateTime timestamp;
-    private final Winner winner;
-    private final String steps;
+    @Column(name = "resultID", nullable = false)
+    private Integer resultID;
 
-    public Result(int id, LocalDateTime timestamp, Winner winner, String steps) {
-        this.id = id;
-        this.timestamp = timestamp;
-        this.winner = winner;
-        this.steps = steps;
-    }
+    @Column(name = "timestamp", nullable = false)
+    private Timestamp timestamp;
 
-    public int getId() {
-        return id;
-    }
+    @Column(name = "winner", nullable = false, length = 4)
+    private String winner;
 
-    public LocalDateTime getTimestamp() {
-        return timestamp;
-    }
-
-    public Winner getWinner() {
-        return winner;
-    }
+    @Column(name = "steps", nullable = false, length = 62)
+    private String steps;
 
     public String getSteps() {
         return steps;
     }
 
-    public String toString() {
-        return String.format("Game #%x | Played: %s | %s",
-                getId(),
-                getTimestamp().format(dtf),
-                (getWinner() == Winner.DRAW) ? "Draw" : "Winner: " + getWinner()
-        );
+    public void setSteps(String steps) {
+        this.steps = steps;
+    }
+
+    public String getWinner() {
+        return winner;
+    }
+
+    public void setWinner(String winner) {
+        this.winner = winner;
+    }
+
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public Integer getResultID() {
+        return resultID;
+    }
+
+    public void setResultID(Integer resultID) {
+        this.resultID = resultID;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

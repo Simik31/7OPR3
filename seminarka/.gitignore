@@ -1,13 +1,13 @@
 # Folders
-.idea/
-.jpb/
-.bin/
-.mvn/
-.settings/
-.vscode/
-target/
+/.idea/
+/.jpb/
+/.bin/
+/.mvn/
+/.settings/
+/.vscode/
+/target/
 
 # Files
-.classpath
-.project
-*.iml
+/.classpath
+/.project
+/*.iml

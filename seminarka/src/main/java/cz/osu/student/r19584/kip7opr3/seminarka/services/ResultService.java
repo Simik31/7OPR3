@@ -1,32 +1,48 @@
 package cz.osu.student.r19584.kip7opr3.seminarka.services;
 
-import cz.osu.student.r19584.kip7opr3.seminarka.Winner;
 import cz.osu.student.r19584.kip7opr3.seminarka.models.Result;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ResultService {
-    private static final List<Result> results = new ArrayList<>();
+    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("local");
 
     public static void addResult(Result result) {
-        results.add(result);
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        em.persist(result);
+        em.getTransaction().commit();
+        em.close();
     }
 
     public static List<Result> getResults() {
-        return new ArrayList<>(results);
+        EntityManager em = emf.createEntityManager();
+        return em.createQuery("SELECT result FROM Result result", Result.class).getResultList();
     }
 
     public static List<Result> getResultsWithIds(List<Integer> ids) {
-        return results.stream().filter(result -> ids.contains(result.getId())).collect(Collectors.toList());
+        if (ids.size() == 0)
+            return new ArrayList<>();
+
+        EntityManager em = emf.createEntityManager();
+
+        return em.createQuery("SELECT result FROM Result result WHERE result.resultID in :ids", Result.class).setParameter("ids", ids).getResultList();
     }
 
-    public static long getNumberOfWinedGames(Winner winner) {
-        return results.stream().filter(result -> result.getWinner() == winner).count();
+    public static long getNumberOfWinedGames(String winner) {
+        if (getNumberOfGames() == 0)
+            return 0;
+
+        EntityManager em = emf.createEntityManager();
+
+        return em.createQuery("SELECT result FROM Result result WHERE result.winner = :winner", Result.class).setParameter("winner", winner).getResultList().size();
     }
 
     public static long getNumberOfGames() {
-        return results.size();
+        return getResults().size();
     }
 }
