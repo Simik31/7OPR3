@@ -1,4 +1,4 @@
-#TIC-TAC-TOE
+# TIC-TAC-TOE
 
 JSP, Servlet & JPA
 
@@ -35,8 +35,8 @@ JSP, Servlet & JPA
   
   - FIXME: History layout overlap, works only in portrait mode
 
-##How to run
-###IntelliJ Idea
+## How to run
+### IntelliJ Idea
 
 - Click on 'Add configuration...'
 - Click on '+'
