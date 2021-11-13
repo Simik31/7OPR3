@@ -81,4 +81,5 @@ function cell_click(cell) {
 }
 
 update_on_move();
+document.getElementById("gameId").innerText = ((Math.random() * 0x10000000) + 0x10000000).toString(16).split(".")[0];
 cells.forEach(cell => cell.onclick = function() {cell_click(cell)});

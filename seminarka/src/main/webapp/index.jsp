@@ -33,9 +33,7 @@
             <a id="stats" class="position-fixed" href="./stats">Statistics</a>
         </div>
 
-        <h3 id="game_id" class="position-fixed">Game #<span id="gameId"><%
-            out.print(String.format("%x", new Random().nextInt(0x10000000) + 0x10000000)); // 161,061,273 combinations
-        %></span></h3>
+        <h3 id="game_id" class="position-fixed">Game #<span id="gameId">0</span></h3>
 
         <script type="module" src="./js/game.js"></script>
     </body>
