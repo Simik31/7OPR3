@@ -17,7 +17,7 @@ import java.util.List;
 
 @WebServlet(name = "historyServlet", value = "/history")
 public class historyServlet extends HttpServlet {
-    private static final SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss.SSS");
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
