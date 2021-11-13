@@ -29,12 +29,14 @@
     - Width: 520px
     - Height: 770px
   - :root compatible
+
      ![Compatibility](./root_compatibility.png)
      Image source: [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:root#browser_compatibility)
 
 ## Tested in browsers:
 - Desktop
   - Microsoft Edge (version 95.0.1020.44) 64-bit
+  - Google Chrome (version 95.0.4638.69) 64-bit
   
   - FIXME:
     - None
