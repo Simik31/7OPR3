@@ -30,8 +30,8 @@ JSP, Servlet & JPA
 
 
 - Mobile
-  - Microsoft Edge Mobile (version 95.0.1020.48)
-  - Google Chrome Mobile (version 95.0.4638.74)
+  - Microsoft Edge (version 95.0.1020.48)
+  - Google Chrome (version 95.0.4638.74)
   
   - FIXME: History layout overlap, works only in portrait mode
 
