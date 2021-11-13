@@ -55,7 +55,7 @@ public class historyServlet extends HttpServlet {
             default -> throw new ServletException("Invalid scope");
         };
 
-        Collections.reverse(results);
+        results.sort(Result::compareTo);
 
         for (Result result : results)
             out.printf(

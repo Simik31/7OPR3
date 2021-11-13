@@ -50,4 +50,8 @@ public class Result {
     public void setID(Integer ID) {
         this.ID = ID;
     }
+
+    public int compareTo(Result other) {
+        return -this.getTimestamp().compareTo(other.getTimestamp());
+    }
 }
