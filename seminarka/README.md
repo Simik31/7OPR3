@@ -26,14 +26,17 @@ JSP, Servlet & JPA
 - Desktop
   - Microsoft Edge (version 95.0.1020.44) 64-bit
   
-  - FIXME: None
+  - FIXME:
+    - None
 
 
 - Mobile
   - Microsoft Edge (version 95.0.1020.48)
   - Google Chrome (version 95.0.4638.74)
   
-  - FIXME: History layout overlap, works only in portrait mode
+  - FIXME:
+    - History layout overlap
+    - Works only in portrait mode
 
 ## How to run
 ### IntelliJ Idea
