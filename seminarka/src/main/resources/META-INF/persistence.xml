@@ -8,14 +8,12 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>cz.osu.student.r19584.kip7opr3.seminarka.models.Result</class>
         <properties>
-            <property name="hibernate.show_sql" value="true"/>
+            <!-- change me --> <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/tic-tac-toe"/>
+            <!-- change me --> <property name="hibernate.connection.username" value="root"/>
+            <!-- change me --> <property name="hibernate.connection.password" value=""/>
+
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/tic-tac-toe"/>
-            <property name="hibernate.connection.username" value="root"/>
-            <property name="hibernate.connection.password" value=""/>
-            <property name="hibernate.cache.use_second_level_cache" value="false"/>
-            <property name="hibernate.cache.use_query_cache" value="false"/>
         </properties>
     </persistence-unit>
 </persistence>

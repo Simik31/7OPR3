@@ -19,8 +19,19 @@ JSP, Servlet & JPA
 
 
 ## Requirements
-- Jetty Server
-- Maven
+- Server
+  - Jetty Server
+  - Maven
+  - Java 16 or higher
+  
+
+- Browser
+  - resolution at least:
+    - Width: 520px
+    - Height: 770px
+  - :root compatible
+     ![Compatibility](./root_compatibility.png)
+     Image source: [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/:root#browser_compatibility)
 
 ## Tested in browsers:
 - Desktop
@@ -52,4 +63,6 @@ JSP, Servlet & JPA
 - Select 'seminarka:war exploded'
 - OK
 - OK
+- Optional:
+  - Change database properties in `src/main/resources/META-INF/persistence.xml` (marked by `<!-- change me -->`)
 - Run 
