@@ -2,7 +2,7 @@
 
 JSP, Servlet & JPA
 
-##User stories
+## User stories
 - [x] As a player, I want to be able to play hot-seat tic-tac-toes.
 - [x] As the first player, I want to play as X.
 - [x] As the second player, I want to play as O.
