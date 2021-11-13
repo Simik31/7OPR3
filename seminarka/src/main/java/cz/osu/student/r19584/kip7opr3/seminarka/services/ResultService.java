@@ -20,26 +20,30 @@ public class ResultService {
     }
 
     public static List<Result> getResults() {
-        EntityManager em = emf.createEntityManager();
-        return em.createQuery("SELECT result FROM Result result", Result.class).getResultList();
+        return emf.createEntityManager()
+                .createQuery("SELECT result FROM Result result", Result.class)
+                .getResultList();
     }
 
     public static List<Result> getResultsWithIds(List<Integer> ids) {
         if (ids.size() == 0)
             return new ArrayList<>();
 
-        EntityManager em = emf.createEntityManager();
-
-        return em.createQuery("SELECT result FROM Result result WHERE result.resultID in :ids", Result.class).setParameter("ids", ids).getResultList();
+        return emf.createEntityManager()
+                .createQuery("SELECT result FROM Result result WHERE result.ID in :ids", Result.class)
+                .setParameter("ids", ids)
+                .getResultList();
     }
 
     public static long getNumberOfWinedGames(String winner) {
         if (getNumberOfGames() == 0)
             return 0;
 
-        EntityManager em = emf.createEntityManager();
-
-        return em.createQuery("SELECT result FROM Result result WHERE result.winner = :winner", Result.class).setParameter("winner", winner).getResultList().size();
+        return emf.createEntityManager()
+                .createQuery("SELECT result FROM Result result WHERE result.winner = :winner", Result.class)
+                .setParameter("winner", winner)
+                .getResultList()
+                .size();
     }
 
     public static long getNumberOfGames() {

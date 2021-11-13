@@ -60,7 +60,7 @@ public class historyServlet extends HttpServlet {
         for (Result result : results)
             out.printf(
                 "       <div class=\"font-size-ui-40\">Game #%x | Played: %s | %s</div><iframe class=\"border-none r-0\" width=\"150\" height=\"'150\" src=\"./simulate?steps=%s\"></iframe>",
-                result.getResultID(),
+                result.getID(),
                 sdf.format(result.getTimestamp()),
                 (result.getWinner().equals("Draw")) ? "Draw" : "Winner: " + result.getWinner(),
                 result.getSteps()

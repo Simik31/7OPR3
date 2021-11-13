@@ -20,10 +20,11 @@ public class addResultServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Result result = new Result();
-        result.setResultID(Integer.parseInt(request.getParameter("id"), 16));
+        result.setID(Integer.parseInt(request.getParameter("id"), 16));
         result.setTimestamp(Timestamp.valueOf(LocalDateTime.now()));
         result.setWinner(request.getParameter("result"));
         result.setSteps(request.getParameter("steps"));
         ResultService.addResult(result);
+
     }
 }

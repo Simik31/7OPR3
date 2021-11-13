@@ -3,18 +3,12 @@ package cz.osu.student.r19584.kip7opr3.seminarka.models;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-@Table(name = "results", indexes = {
-        @Index(name = "resultID", columnList = "resultID", unique = true)
-})
+@Table(name = "results")
 @Entity
 public class Result {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
-    private Integer id;
-
-    @Column(name = "resultID", nullable = false)
-    private Integer resultID;
+    private Integer ID;
 
     @Column(name = "timestamp", nullable = false)
     private Timestamp timestamp;
@@ -49,19 +43,11 @@ public class Result {
         this.timestamp = timestamp;
     }
 
-    public Integer getResultID() {
-        return resultID;
+    public Integer getID() {
+        return ID;
     }
 
-    public void setResultID(Integer resultID) {
-        this.resultID = resultID;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+    public void setID(Integer ID) {
+        this.ID = ID;
     }
 }
