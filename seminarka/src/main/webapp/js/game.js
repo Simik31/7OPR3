@@ -49,7 +49,7 @@ function win(win_rows, win_cols, win_dias) {
 
 function draw() {
     cells.forEach(cell => cell.classList.remove('playable'));
-    uploadResult("draw");
+    uploadResult("Draw");
     display_on_move('Draw!');
 }
 
