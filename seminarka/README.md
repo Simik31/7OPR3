@@ -64,5 +64,5 @@ JSP, Servlet & JPA
 - OK
 - OK
 - Optional:
-  - Change database properties in `src/main/resources/META-INF/persistence.xml` (marked by `<!-- change me -->`)
+  - Change database properties in [`src/main/resources/META-INF/persistence.xml`](src/main/resources/META-INF/persistence.xml) (marked by `<!-- change me -->`)
 - Run 
