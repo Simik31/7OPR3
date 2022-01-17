@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="vypis_predmetu:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>vypis_predmetu</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="vypis_predmetu-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="vypis_predmetu:war exploded" />
+    </root>
+  </artifact>
+</component>
